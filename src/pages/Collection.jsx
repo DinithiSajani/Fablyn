@@ -12,7 +12,7 @@ const Collection = () => {
   const [subCategory, setSubCategory] = useState([]);
   const [sortOrder, setSortOrder] = useState('relevant');
   const [normalizedProducts, setNormalizedProducts] = useState([]);
-  const[sortType,setSortType] = useState('relavent')
+  const [sortType,setSortType] = useState('relavent')
   // Normalize product category & subCategory on load
   useEffect(() => {
     const normalized = products.map((p) => ({
@@ -169,14 +169,8 @@ useEffect(()=>{
 
         {/* Map Products */}
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6'>
-          {filterProducts.map((item, index) => (
-            <ProductItem
-              key={index}
-              name={item.name}
-              id={item.id}
-              price={item.price}
-              image={item.image}
-            />
+          {filterProducts.map((item,index)=>(
+        <ProductItem key={index} id={item._id} image={item.image} name={item.name} price={item.price}/>
           ))}
         </div>
       </div>
