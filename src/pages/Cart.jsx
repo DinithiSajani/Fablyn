@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../context/ShopContext';
 import Title from '../components/Title'; // adjust the path if your Title component is in a different location
 import { assets } from '../assets/assets';
+import { CartTotal } from '../components/CartTotal';
 
 const Cart = () => {
   const { products, currency, cartItems, updateQuantity } = useContext(ShopContext);
@@ -58,6 +59,18 @@ const Cart = () => {
 
           })
         }
+      </div>
+
+      <div className='flex justify-end my-20'>
+        <div className='w-full sm:w[450px]'>
+          <CartTotal />
+          <div className=' w-full text-end'>
+            <button className='bg-black text-white text-sm my-8 px-8 py-3'>PROCEED TO CHECKOUT</button>
+
+          </div>
+
+        </div>
+
       </div>
     </div>
   );
